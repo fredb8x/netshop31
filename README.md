@@ -1,5 +1,2 @@
-# netshop31
-Template Netshop
-
-Statut Green pink
-
+Test Child Theme
+Child theme for my development site.
