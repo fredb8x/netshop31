@@ -5,7 +5,7 @@ Template: Divi
 Author: CETIR
 Author URI: https://www.cetir.net
 Description: 
-Version: 0.1
+Version: 0.11
 Updated: 2019-10-29 09:48:00
 
 */
@@ -23,7 +23,7 @@ Updated: 2019-10-29 09:48:00
 
 /*TYPOGRAPHIE*/
 h2{
-    color: rgb(50, 80, 202)!important;
+    color: rgb(250, 80, 202)!important;
     font-size: 5vw!important;
 }
 
