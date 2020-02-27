@@ -1,11 +1,11 @@
 /*
-Theme Name: Netshop31
+Theme Name: Netshop 31
 Theme URI: http://www.elegantthemes.com/gallery/divi/
 Template: Divi
 Author: CETIR
 Author URI: https://www.cetir.net
 Description: 
-Version: 1
+Version: 0.1
 Updated: 2019-10-29 09:48:00
 
 */
@@ -24,7 +24,7 @@ Updated: 2019-10-29 09:48:00
 /*TYPOGRAPHIE*/
 h2{
     color: pink!important;
-    font-size: 7.7vw!important;
+    font-size: 7vw!important;
     text-decoration: underline;
 }
 
