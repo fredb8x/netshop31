@@ -21,6 +21,16 @@ Updated: 2019-10-29 09:48:00
 }
 
 
+/*TYPOGRAPHIE*/
+h2{
+    color: red!important;
+    font-size: 20vw!important;
+}
+
+
+
+
+
 #main-header {
     -webkit-box-shadow: 0 1px 30px rgba(0,0,0,.1);
     box-shadow: 0 1px 30px rgba(0,0,0,.1);
