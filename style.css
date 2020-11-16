@@ -1150,6 +1150,37 @@ body.woocommerce #sidebar .et_pb_widget ul.children > li > a:hover {
 }
 
 /* -------------------------
+-
+-    PLUGIN WOO : 
+-
+---------------------------*/
+.bc-mnc__cart-link--cart-icon i {
+  height: auto !important;
+  width: 30px !important;
+}
+
+.bc-mnc a.bc-mnc__cart-link {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+
+.bc-mnc a.bc-mnc__cart-link::before {
+  content: "Mon panier";
+  display: inline-block;
+}
+
+ul#et-secondary-nav li a {
+  height: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+/* -------------------------
 -  
 -    WoOSB
 -    https://wpclever.net/
