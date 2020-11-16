@@ -1,0 +1,225 @@
+
+/* -------------------------
+-
+-    MAP
+-
+---------------------------*/
+.ums_map_opts{
+
+    /*Bordure des tables*/
+    .umsMmlSlidesTable {
+        border: none!important;
+
+        tbody, tr, td {
+            border: none!important;
+        }
+        tbody{
+            padding: 1em 0;
+        }
+    }
+    /*Couleur arrière plan  de base*/
+    .umsMmlSliderTableShell .umsMmlSlidesTable {
+        background-color: transparent!important;
+    }
+    /*Couleur arrière plan au survol*/
+    .umsMmlSlideTitle {
+        background-color: transparent!important;
+
+        /*affichage mobile du resultat*/   
+        @include media ("<=tabletportrait"){
+            display:none!important;
+        }
+    }
+    /*marge de la cellule*/
+    .umsMmlSliderTableShell .umsMmlSlidesTable td{
+        // padding:6px 16px;
+    }
+    .umsMmlSlideTitleLink{
+        font-size: 14px!important;
+        text-transform: uppercase!important;
+        color: $light-color!important;
+        white-space: inherit!important;
+
+        display:flex;
+
+        padding: 6px 16px;
+        border-radius: 10em;
+        -webkit-border-radius: 10em;
+        -moz-border-radius: 10em;
+        -ms-border-radius: 10em;
+        -o-border-radius: 10em;
+        
+        
+        @include media ("<=tablet"){
+            font-size: 1.7vw!important;
+        }
+
+        &::before{
+            position: relative;
+            top: 2px;
+            left: -6px;
+
+            content: "";
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+
+            background:url(assets/map-arrow.svg);
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        &:hover{
+            background-color:$accent-color!important;
+        }
+    }
+    /*Elements du tableau non utilisé*/
+    .umsMarkerGroup,
+    .umsMmlSlideTableHeader,
+    td.umsMmlSlideAddress,
+    td.umsMmlSlideDescription{ display: none!important; visibility: hidden!important}
+    .umsMarkerGroupWrapper{ display:block!important;}
+
+    /*Affichage sous forme de puce*/
+    tbody{
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        flex: 1 1 20%;    
+    }
+    /* Table
+    ---------------------------*/
+    tr.umsMmlSlideTableRow {
+        display: flex;
+        width: 20%;
+
+        @include media ("<=tablet"){
+            width: 25%;
+        }
+
+        /*affichage mobile du resultat*/   
+        @include media ("<=tabletportrait"){
+            display:none;
+            width: 100%;
+        }
+        /*si class active -> via javascript*/
+        &.active{
+            display:block !important;
+
+            /*contenu de la fiche du tableau*/
+            .umsMmlSlideDescription{
+                display:block !important;
+                visibility: visible!important;
+
+                color: $light-color;
+                font-size: .8em !important;
+                background-color:transparent;
+
+                .umsMarkerTitle{ 
+                    color: $light-color;
+                }
+                a{
+                    color: $light-color!important;
+                }
+
+            }
+        }
+    }
+
+    /* Titre popup et table */
+    .umsMarkerTitle{ 
+        text-align: left!important;
+        text-transform:uppercase!important;
+        font-size: 1em!important;
+        font-weight: 700;
+    }
+
+    /* Popup
+    ---------------------------*/
+    .leaflet-popup-content{
+        padding:2em;
+
+        /*correction affichage des br */
+        .umsMarkerTitle:first-child,
+        .umsMarkerDesc br{display:none;}
+        .umsMarkerDesc .adresse br, 
+        .umsMarkerTitle + br {display:block;}
+
+        a{
+            color: $text-color;
+        }
+    }
+
+
+    /*Description générique des elements textes popup et table 
+    ---------------------------*/
+    .leaflet-popup-content,
+    .umsMmlSlideDescription{
+        span{
+            display:block;
+            &.titre{
+                text-transform:uppercase!important;
+                font-weight: 700!important;
+            }
+            &.adresse{ 
+                margin-bottom:16px;
+            }
+        }
+        a{
+            display:flex !important;
+            align-items: center;
+            padding: 6px 0;
+
+            &:hover{
+                color:$accent-color!important;
+            }
+        }
+
+        i{
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            margin-right: 10px;
+            background-repeat: no-repeat;
+            background-size: contain;
+
+            &.i_phone{ background-image: url("assets/i_phone.svg")}
+            &.i_email{ background-image: url("assets/i_phone.svg")}
+            &.i_goto{ background-image: url("assets/i_loc.svg")}
+
+        }
+    }
+
+
+    .umsMmlSliderTableShell {
+
+        @include media ("<=tabletportrait"){
+            // display:none !important;
+        }
+
+        .umsMmlSlidesTable td{
+            display: flex;
+            flex: 1;
+            align-items: start;
+            margin: 0 2px;
+            padding:0!important;
+        }
+    }
+
+
+
+    // Partie mobile de la carte
+    .umsMapDetailsContainer{
+        @include media ("<=tabletportrait"){
+            display:none !important;
+        }
+    }
+
+    //select de la version mobile
+    select{
+        width: 100%;
+        font-size: 1em;
+        font-weight: 600;
+        border: none; 
+    }
+}

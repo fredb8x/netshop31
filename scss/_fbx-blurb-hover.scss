@@ -1,0 +1,222 @@
+/* -------------------------
+-
+-    Blurb-Hover
+-
+-   Rend un module blurb actif au survol de la souris,
+-   avec apparition du contenu et effet
+-
+-   Divi Blurb Module hover effects by yatesdesign.com.au
+---------------------------*/
+ 
+
+
+.fbx-blurb-hover .et_pb_column {
+    position: relative;
+}
+
+.fbx-blurb-hover .et_pb_column .et_pb_blurb,
+.fbx-blurb-hover .et_pb_column [class*='next_blurb'] {
+    transform: scale(1)   ;
+    -webkit-transform: scale(1)   ;
+    -moz-transform: scale(1)   ;
+    -ms-transform: scale(1)   ;
+    -o-transform: scale(1)   ;
+    transition:transform .4s;
+    -webkit-transition:transform .4s;
+    -moz-transition:transform .4s;
+    -ms-transition:transform .4s;
+    -o-transition:transform .4s;
+
+    &:hover  {
+        box-shadow: $boxshadow-bleu;
+        transform: scale(1.04);
+        -webkit-transform: scale(1.04);
+        -moz-transform: scale(1.04);
+        -ms-transform: scale(1.04);
+        -o-transform: scale(1.04);
+        z-index: 1000;
+    }
+}
+.fbx-blurb-hover .et_pb_column .et_pb_blurb:hover::before,
+.fbx-blurb-hover .et_pb_column [class*='next_blurb']:hover .dnxt-blurb-wrapper::before {
+    content: "";
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100%;height: 100%;
+    background: -webkit-gradient(linear, left top, right top, from(rgba($grad-th1-start,.9)), color-stop(100%, rgba($grad-th1-end,.9)));
+    background: linear-gradient(180deg, rgba($grad-th1-start,.9) 0%, rgba($grad-th1-end,.9) 100%);
+}
+.fbx-blurb-hover .et_pb_column{
+    /* Pour chaque theme dans le jeu de donnée, on créé les déclinaisons possible pour chaque element */
+    @each $color in $a_gradThemeStart {
+        $i: index($a_gradThemeStart, $color );
+        &.theme#{$i}{
+            /*bouton dans le module de résumé*/
+            .et_pb_blurb:not(:hover) .et_pb_module_header{
+                background: linear-gradient(90deg, map-get($a_gradThemeStart, "theme#{$i}") 0%, map-get($a_gradThemeEnd, "theme#{$i}") 100%);
+            }
+            
+            /*overlay sur le module de résumé*/
+            .et_pb_blurb:hover,
+            [class*='next_blurb']:hover .dnxt-blurb-wrapper{
+                &::before{ 
+                    background: linear-gradient(90deg, map-get($a_gradThemeStart, "theme#{$i}") 0%, map-get($a_gradThemeEnd, "theme#{$i}") 100%); 
+                }
+                .et_pb_module_header{
+                    background:none;
+                }
+            }
+        }
+    }
+    // @for $i from 1 through length($colors) {
+    //     $color: nth($colors, $i);
+    //     &.theme#{$i}:hover { 
+    //         background: linear-gradient(90deg, $colors 0%, $colors 100%); 
+    //     }
+    //   }
+}
+
+/* Correction bug */
+.fbx-blurb-hover .et_pb_column [class*='next_blurb']:hover .dnxt-blurb-wrapper div {
+    position: relative;
+}
+    
+.fbx-blurb-hover .et_pb_blurb p,
+.fbx-blurb-hover [class*='next_blurb'] .dnxt-blurb-wrapper p {
+    zoom: 1;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    -webkit-transition: opacity .2s,transform .35s;
+    transition: opacity .2s,transform .35s;
+    -moz-transition: opacity .2s,transform .35s;
+    -ms-transition: opacity .2s,transform .35s;
+    -o-transition: opacity .2s,transform .35s;
+    transform: translate3d(0,40px,0);
+    -webkit-transform: translate3d(0,40px,0);
+    -moz-transform: translate3d(0,40px,0);
+    -ms-transform: translate3d(0,40px,0);
+    -o-transform: translate3d(0,40px,0);
+    padding: 0 16px 10px !important;
+    -webkit-filter: alpha(opacity=0);
+    
+    /*AFFICHAGE EN BLOC DE HAUTEUR IDENTIQUE*/
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    /* 4 lignes = 4 * line-height */
+    height: 6.4em;
+    min-height: 6.4em;
+    max-height: 6.4em;
+    line-height: 1.6em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+    
+.fbx-blurb-hover .et_pb_column .et_pb_blurb:hover p,
+.fbx-blurb-hover .et_pb_column [class*='next_blurb']:hover .dnxt-blurb-wrapper p {
+    color: #fff;
+    -webkit-transition-delay: .05s;
+    transition-delay: .05s;
+    -webkit-transition-duration: .35s;
+    transition-duration: .35s;
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+    zoom: 1;
+    filter: alpha(opacity=1);
+    opacity: 1;
+    -webkit-filter: alpha(opacity=1);
+    -moz-transform: translate3d(0,0,0);
+    -ms-transform: translate3d(0,0,0);
+    -o-transform: translate3d(0,0,0);
+}
+    
+.fbx-blurb-hover .et_pb_column .et_pb_blurb:hover h4 {
+    bottom: 100%;
+}
+    
+.fbx-blurb-hover .et_pb_blurb h4,
+.fbx-blurb-hover [class*='next_blurb'] h4 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: bottom .35s;
+    -webkit-transition: bottom .35s;
+    -moz-transition: bottom .35s;
+    -ms-transition: bottom .35s;
+    -o-transition: bottom .35s;
+}
+       
+.fbx-blurb-hover{
+    .et_pb_button {
+        zoom: 1;
+        filter: alpha(opacity=0);
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .et_pb_module_header{
+        display: -webkit-box;
+        display: flex;
+        padding: 10px 16px;
+        max-width: 88%;
+        
+        &::after{
+            content:"";
+            display:inline-block;
+            width: 16px;
+            min-width: 16px;
+            height: 16px;
+            margin-left:16px;
+            background:url(assets/arrox-right.svg) no-repeat center;
+            background-size: cover;
+        }
+   }
+   .et_pb_column:not(:hover) .et_pb_module_header{
+        background: -webkit-gradient(linear, left top, right top, from($grad-th1-start), color-stop(100%, $grad-th1-end));
+        background: linear-gradient(90deg, $grad-th1-start 0%, $grad-th1-end 100%);
+    }
+}    
+
+
+
+
+/* UTILISATION DE l'OUTIL Slider-Layout
+---------------------------*/
+.owl-stage-outer{
+    z-index: -1;
+}
+.owl-carousel .owl-dots{
+    margin-top: -3rem;
+}
+.owl-carousel .owl-nav {
+    text-align: right;
+    margin: -3rem 3rem 0;
+
+    button.owl-prev, button.owl-next{
+        &:hover{
+            background: $text-color;    
+        }
+        background: $grey-color;
+        
+        border-radius: 100em;
+        -webkit-border-radius: 100em;
+        -moz-border-radius: 100em;
+        -ms-border-radius: 100em;
+        -o-border-radius: 100em;
+
+        span {
+            width: 1.4em;
+            height: 1.4em;
+            display: block;
+            color: $light-color;
+            font-size: 1.3em;
+            line-height: 1.2em;
+
+        }
+    }
+
+}

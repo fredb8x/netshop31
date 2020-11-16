@@ -1,0 +1,70 @@
+
+/* Variables du projet
+-------------------------------------*/
+
+$theme1:#02a9df;
+$theme2:#0b7eb9;
+$light-color:#fff;
+$dark-color:#000000;
+/*---------------------*/
+$main-color: $dark-color;
+$accent-color: $theme1;
+$accent-color-hover:$theme2;
+$text-color:$light-color;
+$grey-color:#f1f2f7;
+$grey-color2:#dadada;
+$input-bgcolor: $light-color;
+$input-text: $main-color;
+
+
+/* Tableau de couleurs pour la generation des themes */
+$a_gradThemeStart: rgba(31,160,234,1);
+$a_gradThemeEnd: rgba(33,181,253,1);
+$a_grad: linear-gradient(90deg, $a_gradThemeStart 0%, $a_gradThemeEnd 100%);
+$a_grad-hover: linear-gradient(90deg, rgba($a_gradThemeStart,.5) 0%, rgba($a_gradThemeEnd,.5) 100%);
+
+i{
+    // &.ico-brochures{ background-image: url(assets/ico-brochures-w.svg); }
+    // &.ico-espace-pro{ background-image: url(assets/ico-espacepro-w.svg); }
+    // &.ico-medias{ background-image: url(assets/ico-medias-w.svg); }
+    // &.ico-brochures-thin{ background-image: url(assets/ico-brochure-thin.svg); }
+    // &.ico-espace-pro-thin{ background-image: url(assets/ico-espacepro-thin.svg); }
+    // &.ico-infos-pratiques-thin{ background-image: url(assets/ico-infos-pratiques-thin.svg); }
+    // &.ico-medias-thin{ background-image: url(assets/ico-medias-thin.svg); }
+    // &.ico-goto{ background-image: url(assets/ico-map-w.svg); }
+    // &.ico-phone{ background-image: url(assets/ico-phone-w.svg); }
+    // &.ico-user{ background-image: url(assets/ico-user-w.svg); }
+}
+
+.menu-item{
+    &.ico-facebook a::before{ background-image: url(assets/ico-facebook.svg); }
+    // &.ico-twitter a::before{ background-image: url(assets/ico-twitter-w.svg); }
+    &.ico-instagram a::before{ background-image: url(assets/ico-instagram.svg); }
+
+    /* HOVER STATE */
+    &.ico-facebook a:hover::before{ background-image: url(assets/ico-facebook-hover.svg); }
+    // &.ico-twitter a::hover:before{ background-image: url(assets/ico-twitter-hover.svg); }
+    &.ico-instagram a:hover::before{ background-image: url(assets/ico-instagram-hover.svg); }
+}
+
+// @font-face
+// {
+//     font-family: "title-font";
+//     src: url("./fonts/FontsFree-Net-hailen.woff") format("woff"), /* Modern Browsers */
+//       url("./fonts/FontsFree-Net-hailen.woff2") format("woff2"); /* Modern Browsers */
+//     font-weight: normal;
+//     font-style: normal;
+// } 
+// $title-font: 'title-font', serif;
+
+// @font-face
+// {
+//     font-family: "sourcePro";
+//     src: url("./fonts/SourceSansPro-Light.woff") format("woff"), /* Modern Browsers */
+//       url("./fonts/SourceSansPro-Light.woff2") format("woff2"); /* Modern Browsers */
+//     font-weight: normal;
+//     font-style: normal;
+// }
+/* police incluse dans le code header de la template */
+// $body-font : 'sourcePro', sans-serif;
+// $body-font : 'Montserrat', sans-serif;

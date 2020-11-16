@@ -1,0 +1,15 @@
+/* -------------------------
+-  
+-    BOOSTER
+-
+---------------------------*/
+
+.et_pb_gallery_grid .et_pb_gallery_image {
+    
+    @include media ("<tabletportrait"){
+        position: relative;
+        padding-bottom: 50%;
+        height: 0;
+        overflow: hidden;
+    }
+}

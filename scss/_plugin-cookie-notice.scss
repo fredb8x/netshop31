@@ -1,0 +1,16 @@
+/* -------------------------
+-  
+-    Cookies notice : https://wordpress.org/support/plugin/cookie-notice/
+-
+---------------------------*/
+#cookie-notice{
+    #cn-notice-text a#cn-more-info { color: $light-color; text-decoration:underline; }
+    #cn-notice-buttons a{
+        background-color: $accent-color;
+        border-radius: 100em;
+        -webkit-border-radius: 100em;
+        -moz-border-radius: 100em;
+        -ms-border-radius: 100em;
+        -o-border-radius: 100em;
+}
+}
