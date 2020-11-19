@@ -403,3 +403,40 @@ body.woocommerce  #sidebar{
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* -------------------------
+-
+-    PLUGIN WOO : 
+-
+---------------------------*/
+.bc-mnc__cart-link--cart-icon i{
+    height: auto!important;
+    width:30px!important;
+}
+.bc-mnc a.bc-mnc__cart-link{
+    display:flex!important;
+
+    &::before{
+        content: "Mon panier";
+        display: inline-block;
+    }
+}
+ul#et-secondary-nav li a {
+    height: 2rem;
+    display: flex;
+    align-items: center;
+}

@@ -100,7 +100,6 @@ function bbloomer_list_all_product_cat_ids() {
 }
 
 
-
 /* Modifier le nom des bloc d'informations WooCommerce */
 
 add_filter( 'woocommerce_product_tabs', 'wpm_rename_tabs', 98 );
@@ -141,6 +140,8 @@ function wpm_rename_tabs( $tabs ) {
 
     }
 
+    // on enlève l'onglet des informations complémentaires qui affiche par exemple le poids des articles
+    unset( $tabs['additional_information'] );
 
     return $tabs;
 
@@ -210,7 +211,7 @@ function fbx_woo_cat_banner() {
         "moto" => 698,
         "vehicules-autre" => 788,
 
-        "materiel" => 691,
+        "materiel" => 1040,
 
         "desodorant-surodorant" => 792,
         "desodorant" => 792,
