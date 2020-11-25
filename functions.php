@@ -256,3 +256,15 @@ function dac_add_cart_button () {
     add_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_add_to_cart', 10 );
 }
 add_action( 'after_setup_theme', 'dac_add_cart_button' );
+
+
+
+// Page Boutique
+// Ajoute la class woccomerce pour avoir le design des boutons
+add_filter('body_class', 'add_custom_body_class');
+function add_custom_body_class($classes){
+   if( is_shop() )
+        $classes[] = 'woocommerce test-fred';
+
+   return $classes;
+}
