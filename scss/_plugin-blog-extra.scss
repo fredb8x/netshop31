@@ -1,0 +1,19 @@
+/* Full width*/
+.et_pb_post_extra.el_dbe_full_width .post-content .post-data{
+    border: 0!important;
+}
+.et_pb_post_extra.el_dbe_full_width .post-date em{
+    font-family: "MKAbel";
+    font-weight: normal;
+    color: $text-color!important;
+}
+.et_pb_post_extra.el_dbe_full_width .day{
+    border-color: $theme1!important;
+    font-weight: normal!important;
+}
+.et_pb_blog_extras_0_tb_body .et_pb_post.et_pb_post_extra .post-meta, 
+.et_pb_blog_extras_0_tb_body .et_pb_post.et_pb_post_extra .post-meta a, 
+.et_pb_blog_extras_0_tb_body .et_pb_post.et_pb_post_extra .post-meta span, 
+.et_pb_blog_extras_0_tb_body .et_pb_post.et_pb_post_extra .post-date{
+    color: $text-color!important;
+}

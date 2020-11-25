@@ -1,0 +1,278 @@
+/* -------------------------
+-
+-    Placeholder & class tool
+-
+---------------------------*/
+
+/* MIXIN
+---------------------------*/
+@mixin flexCenter($direction: column, $justify: center) {
+    display: flex;
+    justify-content: $justify;
+    align-items: center;
+    flex-direction: $direction;
+}
+@mixin backgroundContain{
+    background-repeat: no-repeat!important;
+    background-size: contain!important;
+}
+@mixin linkHoverUnderline($color: $theme1){
+    position: relative;
+
+    &::before{
+        content: "";
+        display: block;
+        width: 0;
+        position: absolute;
+        bottom: -4px;
+        height: 1px;
+        background: $color;
+        left: 0;
+        transition: width 200ms ease;
+        -webkit-transition: width 200ms ease;
+        -moz-transition: width 200ms ease;
+        -ms-transition: width 200ms ease;
+        -o-transition: width 200ms ease;
+    }
+
+    &:hover::before{
+        width:100%; 
+    }
+}
+
+@mixin linkHoverOpacity($opacity:.7){
+    opacity: 1;
+    transition: opacity 200ms ease;
+    -webkit-transition: opacity 200ms ease;
+    -moz-transition: opacity 200ms ease;
+    -ms-transition: opacity 200ms ease;
+    -o-transition: opacity 200ms ease;
+    
+    &:hover{
+        opacity: $opacity;
+    }
+}
+
+@mixin backgroundColor($colorStart:red, $colorEnd: blue){
+    background-color: $colorStart;
+    background : linear-gradient(90deg, $colorStart 0%, $colorEnd 100%);
+}
+
+@mixin animate($attribute){
+    transition: $attribute 200ms ease;
+    -webkit-transition: $attribute 200ms ease;
+    -moz-transition: $attribute 200ms ease;
+    -ms-transition: $attribute 200ms ease;
+    -o-transition: $attribute 200ms ease;
+}
+@mixin inputColor{
+    background-color:$input-bgcolor!important;
+    padding: 7px!important;
+    color: $input-text!important;
+    border: 1px solid $main-color!important;
+}
+
+
+/* PLACEHOLDER
+---------------------------*/
+
+%placeholder-icon{
+    display:block;
+    content: "";
+    width: 20px;
+    height: 20px;
+
+    @include backgroundContain;
+    // background:red;
+}
+%button-search{
+    content: '\55';
+    position: absolute;
+    right: 2px;
+    top: 2px;
+    width: 20px;
+    height: 20px;
+    padding: 6px;
+    font-family: 'ETModules';
+    z-index: 1;
+    font-size: 16px;
+    font-weight: bold;
+    color: $light-color;
+    text-align: center;
+    line-height:1.3;
+
+    @include backgroundColor;
+
+    border-radius: 100em;
+    -webkit-border-radius: 100em;
+    -moz-border-radius: 100em;
+    -ms-border-radius: 100em;
+    -o-border-radius: 100em;
+}
+
+%woo-title-link{
+    font-size: 1.6em;
+    font-weight: bold;
+    color: $main-color;
+    &:hover::after{
+        display: inline-block;
+        content: "&";
+        margin-left: 12px;
+        font-family: 'ETmodules';
+        font-size: .7em;
+        color: $accent-color;
+    }
+    &:hover{
+        color: $accent-color;
+    }
+}
+
+
+
+/* REDEFINE
+---------------------------*/
+.et_pb_row {
+    
+    padding-left: 1vw;
+    padding-right: 1vw;
+
+    @include media ("<desktop"){
+        width: 90%;
+        padding-left: 4vw;
+        padding-right: 4vw;
+    }
+}
+.container{
+    padding-left: 1vw;
+    padding-right: 1vw;
+    width: 100%!important;
+    @include media ("<desktop"){
+        width: 90%;
+        padding-left: 4vw;
+        padding-right: 4vw;
+    }
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color:rgba($main-color,.5)!important;
+    font-size:1rem!important;
+}
+  
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color:rgba($main-color,.5)!important;
+    font-size:1rem!important;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color:rgba($main-color,.5)!important;
+    font-size:1rem!important;
+}
+
+
+/* CLASS
+---------------------------*/
+
+/* ALIGNEMENT VERTICAL CENTRE */
+.col_align_center
+{
+    display: flex;
+    align-items: center;
+}
+.col_align_center_verticaly .et_pb_column 
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+@media all and (max-width: 980px) {
+    .col_align_center 
+    {
+        flex-direction: column-reverse;        
+    }
+    .col_align_center .et_pb_column:first-of-type
+    {
+        margin-top:24px;
+    }
+}
+
+/* Bouton CTA sur Slider*/
+.et_pb_slider.fbx__button-cta{
+    .et_pb_button{
+        background-color: $accent-color;
+    }
+}
+/* Bouton CTA sur Slider*/
+.et_pb_fullwidth_header.fbx__button-cta{
+    .header-content .et_pb_button:last-of-type{
+        background-color: $accent-color;
+    }
+}
+
+
+/* Icon dans les balise i */
+i{
+    @extend %placeholder-icon;
+    margin-right:4px;
+}
+h4 > i{
+    width: 3em;
+    height: 3em;
+    margin: 0 auto .5em;
+}
+
+
+
+/* COMPOSANT 
+---------------------------*/
+#fbx-col-block {
+    .et_pb_column {
+        display: flex;
+        align-items: flex-end;
+        z-index: 3;
+        
+        //si un lien existe sur la colonne
+        //lien généré par le javascript à partir du HREF du bouton
+        &.et_clickable{ 
+            @include animate(transform);
+            
+            &::before {
+                position: absolute;
+                top: 0;left:0;
+                content: "";
+                display: block;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+                @include animate(opacity);
+            }
+            &:hover{
+                transform: scale(1.04);
+                
+                &::before{opacity: .8;}
+                .et_pb_button,
+                .et_pb_button:hover{
+                    background:none!important;
+                }
+            }
+        }
+    }
+    .et_pb_button{
+        font-weight: normal;
+        border: 0;
+        padding: .3em .5em!important;
+        line-height:1;
+        font-size:1.7em;
+        &::after{
+            position: relative;
+        }
+        &:hover{
+            color: $light-color!important;
+        }
+
+        border-radius: 0;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        -ms-border-radius: 0;
+        -o-border-radius: 0;
+    }
+}

@@ -1,0 +1,59 @@
+
+/* -------------------------
+-  
+-    WoOSB
+-    https://wpclever.net/
+-
+---------------------------*/
+.woosb-products {
+
+    .woosb-product{
+        padding: 1.3em 0;
+
+
+        .woosb-thumb{
+            margin-right: 1em;
+        }
+
+        
+        .woosb-title{
+            // .woosb-title-inner{}
+            a{
+                @extend %woo-title-link;
+                // font-size: 1.6em;
+                // font-weight: bold;
+                // color: $main-color;
+                // &:hover::after{
+                //     display: inline-block;
+                //     content: "&";
+                //     margin-left: 12px;
+                //     font-family: 'ETmodules';
+                //     font-size: .7em;
+                //     color: $accent-color;
+                // }
+                // &:hover{
+                //     color: $accent-color;
+                // }
+            }
+            .woosb-description{
+                font-size: 1em;
+            }
+            .woosb-availability{}
+        }
+
+
+        .woosb-price{
+            width: auto;
+            .woocommerce-Price-amount{
+                color: $accent-color;
+                font-size: 1.3rem!important;
+            }
+            .woocommerce-price-suffix .woocommerce-Price-amount{
+                color: $main-color;
+                font-size: 1rem!important;
+            }
+        }
+
+
+    }
+}
