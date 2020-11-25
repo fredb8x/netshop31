@@ -67,7 +67,7 @@
 }
 @mixin inputColor{
     background-color:$input-bgcolor!important;
-    padding: 7px 1em!important;
+    padding: 7px!important;
     color: $input-text!important;
     border: 1px solid $main-color!important;
 }

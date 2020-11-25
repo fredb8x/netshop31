@@ -837,14 +837,14 @@ li[class*="-item-all"].nav-back a {
 .et_pb_section input[type=text], .et_pb_section input[type=password], .et_pb_section input[type=tel], .et_pb_section input[type=email], .et_pb_section input.text, .et_pb_section input.title, .et_pb_section textarea, .et_pb_section select,
 .et_pb_section .woocommerce .quantity input.qty, .et_pb_section .woocommerce-page .quantity input.qty, .et_pb_section .woocommerce #content .quantity input.qty, .et_pb_section .woocommerce-page #content .quantity input.qty, .et_pb_section .woocommerce-cart table.cart td.actions .coupon .input-text {
   background-color: #fff !important;
-  padding: 7px 1em !important;
+  padding: 7px !important;
   color: #000000 !important;
   border: 1px solid #000000 !important;
 }
 
 .woocommerce .quantity input.qty, .woocommerce-page .quantity input.qty, .woocommerce #content .quantity input.qty, .woocommerce-page #content .quantity input.qty, .woocommerce-cart table.cart td.actions .coupon .input-text {
   background-color: #fff !important;
-  padding: 7px 1em !important;
+  padding: 7px !important;
   color: #000000 !important;
   border: 1px solid #000000 !important;
 }
