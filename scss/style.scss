@@ -693,7 +693,7 @@ body.et_header_style_slide #et-top-navigation {
 
 // /* Extensions
 // ---------------------------*/
-// @import "./extensions";
+@import "./extensions";
 
 .et_social_sidebar_networks {
     .et_social_icons_container li{
@@ -815,6 +815,12 @@ body.et_header_style_slide #et-top-navigation {
 
 .to-count .et_pb_column{
     counter-reset: blurb;
+}
+
+#pdf_FT, #pdf_FDS{
+    &.et_pb_blurb .et_pb_main_blurb_image ::after{
+        display: none!important;
+    }
 }
 
 // /* DIVI Bouton scroll UP

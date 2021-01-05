@@ -610,6 +610,32 @@ body.et_header_style_slide #et-top-navigation .et_toggle_slide_menu::after {
   padding: 1rem !important;
 }
 
+/* Blurb-Hover
+---------------------------*/
+/* DIvi Booster
+---------------------------*/
+/* Woocommerce
+---------------------------*/
+/* Carte
+---------------------------*/
+/* Complianz
+---------------------------*/
+/* -------------------------
+-  
+-    Complianz
+-    
+-
+---------------------------*/
+#cmplz-document {
+  max-width: 100%;
+}
+
+#cmplz-document i {
+  width: inherit;
+  height: inherit;
+  content: inherit;
+}
+
 .et_social_sidebar_networks .et_social_icons_container li {
   width: 2.7rem;
   height: 2.7rem;
@@ -717,6 +743,10 @@ body.et_header_style_slide #et-top-navigation .et_toggle_slide_menu::after {
 
 .to-count .et_pb_column {
   counter-reset: blurb;
+}
+
+#pdf_FT.et_pb_blurb .et_pb_main_blurb_image ::after, #pdf_FDS.et_pb_blurb .et_pb_main_blurb_image ::after {
+  display: none !important;
 }
 
 footer .et_pb_text_inner p {
