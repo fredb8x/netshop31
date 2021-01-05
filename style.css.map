@@ -6,11 +6,8 @@
         "scss/_variables.scss",
         "scss/_include-media.scss",
         "scss/_tools.scss",
-<<<<<<< HEAD
         "scss/_extensions.scss",
         "scss/_plugin-complianz.scss",
-=======
->>>>>>> f6e719606b02ac00bdb4666917fedf735606fe2b
         "scss/_woocommerce.scss",
         "scss/_plugin-woosb.scss"
     ],
