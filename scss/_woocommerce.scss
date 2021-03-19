@@ -323,7 +323,15 @@ body.product-template-default.single.single-product{
     }
 }  
 
-
+.woocommerce-cart table.cart .product-thumbnail{
+    // corrige l'image toute petite du produit dans le panier
+    min-width: 100px;
+    width: 100px;
+    img
+    {
+        width: 100%;
+    }
+}
 
 
 
